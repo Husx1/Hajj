@@ -1,6 +1,22 @@
 import streamlit as st
 import pandas as pd
 
+# Add RTL styling
+st.markdown(
+    """
+    <style>
+    body, .stApp {
+        direction: rtl;
+        text-align: right;
+    }
+    th, td {
+        text-align: right !important;
+    }
+    </style>
+    """,
+    unsafe_allow_html=True
+)
+
 st.title("📊 نظام توزيع الكوادر الطبية بين المستشفيات")
 
 default_data = {
@@ -96,4 +112,3 @@ external_shortage = int(status_df["Required Physicians"].sum() - movement_df["St
 
 st.subheader("📉 الاحتياج الخارجي")
 st.write(f"الاحتياج الخارجي الغير متوفر في الفائض من المراكز الحالية هو: **{external_shortage}**")
-
