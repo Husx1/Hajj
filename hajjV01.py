@@ -77,3 +77,9 @@ if not movement_df.empty:
     st.dataframe(movement_df)
 else:
     st.info("لا توجد حركات مطلوبة حالياً.")
+
+external_shortage = status_df["Required Physicians"].sum() - movement_df["Staff to Move"].sum()
+
+st.subheader("📉 الاحتياج الخارجي")
+st.write(f"الاحتياج الخارجي الغير متوفر في الفائض من المراكز الحالية هو: **{external_shortage}**")
+
