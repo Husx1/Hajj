@@ -91,7 +91,7 @@ def highlight_status(val):
     if val == "Overloaded":
         color = "red"
     elif val == "Overstaffed":
-        color = "blue"
+        color = "#1E90FF"
     elif val == "Optimal":
         color = "green"
     return f"color: {color}; font-weight: bold"
